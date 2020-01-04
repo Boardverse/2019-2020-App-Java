@@ -1,4 +1,4 @@
-package esi.mobg5.g44422.boardverse.ui.homeActivity.shareFragment;
+package esi.mobg5.g44422.boardverse.ui.homeActivity.friendsFragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import esi.mobg5.g44422.boardverse.R;
 
-public class ShareFragment extends Fragment {
+public class FriendsFragment extends Fragment {
 
-    private ShareViewModel shareViewModel;
+    private FriendsFragmentViewModel friendsFragmentViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        shareViewModel =
-                ViewModelProviders.of(this).get(ShareViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_share, container, false);
-        final TextView textView = root.findViewById(R.id.text_share);
-        shareViewModel.getText().observe(this, new Observer<String>() {
+        friendsFragmentViewModel =
+                ViewModelProviders.of(this).get(FriendsFragmentViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_friends, container, false);
+        final TextView textView = root.findViewById(R.id.text_friends);
+        friendsFragmentViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

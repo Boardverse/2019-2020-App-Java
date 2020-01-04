@@ -1,4 +1,4 @@
-package esi.mobg5.g44422.boardverse.ui.homeActivity.slideshowFragment;
+package esi.mobg5.g44422.boardverse.ui.homeActivity.achievementsFragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import esi.mobg5.g44422.boardverse.R;
 
-public class SlideshowFragment extends Fragment {
+public class AchievementsFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private AchievementsFragmentViewModel achievementsFragmentViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
+        achievementsFragmentViewModel =
+                ViewModelProviders.of(this).get(AchievementsFragmentViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_share, container, false);
+        final TextView textView = root.findViewById(R.id.text_share);
+        achievementsFragmentViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

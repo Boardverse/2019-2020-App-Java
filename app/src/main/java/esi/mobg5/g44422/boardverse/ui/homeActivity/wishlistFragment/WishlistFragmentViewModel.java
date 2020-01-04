@@ -1,16 +1,16 @@
-package esi.mobg5.g44422.boardverse.ui.homeActivity.toolsFragment;
+package esi.mobg5.g44422.boardverse.ui.homeActivity.wishlistFragment;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ToolsViewModel extends ViewModel {
+public class WishlistFragmentViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ToolsViewModel() {
+    public WishlistFragmentViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is tools fragment");
+        mText.setValue("This is the Wishlist fragment");
     }
 
     public LiveData<String> getText() {

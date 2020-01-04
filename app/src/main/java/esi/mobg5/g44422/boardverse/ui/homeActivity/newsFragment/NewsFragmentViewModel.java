@@ -1,16 +1,16 @@
-package esi.mobg5.g44422.boardverse.ui.homeActivity.galleryFragment;
+package esi.mobg5.g44422.boardverse.ui.homeActivity.newsFragment;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class NewsFragmentViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public NewsFragmentViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is the News fragment");
     }
 
     public LiveData<String> getText() {
