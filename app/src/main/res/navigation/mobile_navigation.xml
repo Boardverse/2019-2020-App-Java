@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="esi.mobg5.g44422.boardverse.ui.home.HomeFragment"
+        android:label="@string/main_activity_menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_scan"
+        android:name="esi.mobg5.g44422.boardverse.ui.gallery.GalleryFragment"
+        android:label="@string/main_activity_menu_scan"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_news"
+        android:name="esi.mobg5.g44422.boardverse.ui.slideshow.SlideshowFragment"
+        android:label="@string/main_activity_menu_news"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_friends"
+        android:name="esi.mobg5.g44422.boardverse.ui.tools.ToolsFragment"
+        android:label="@string/main_activity_menu_friends"
+        tools:layout="@layout/fragment_tools" />
+
+    <fragment
+        android:id="@+id/nav_wishlist"
+        android:name="esi.mobg5.g44422.boardverse.ui.share.ShareFragment"
+        android:label="@string/main_activity_menu_wishlist"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_achievements"
+        android:name="esi.mobg5.g44422.boardverse.ui.send.SendFragment"
+        android:label="@string/main_activity_menu_achievements"
+        tools:layout="@layout/fragment_send" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="esi.mobg5.g44422.boardverse.ui.send.SendFragment"
+        android:label="@string/main_activity_menu_logout"
+        tools:layout="@layout/fragment_send" />
+</navigation>

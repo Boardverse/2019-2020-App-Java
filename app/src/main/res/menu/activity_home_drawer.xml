@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="@string/main_activity_menu_general">
+        <menu>
+            <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_menu_home"
+                android:title="@string/main_activity_menu_home" />
+            <item
+                android:id="@+id/nav_scan"
+                android:icon="@drawable/ic_menu_scan"
+                android:title="@string/main_activity_menu_scan" />
+            <item
+                android:id="@+id/nav_news"
+                android:icon="@drawable/ic_menu_news"
+                android:title="@string/main_activity_menu_news" />
+        </menu>
+    </item>
+
+
+    <item android:title="@string/main_activity_menu_user">
+        <menu>
+            <item
+                android:id="@+id/nav_friends"
+                android:icon="@drawable/ic_menu_friends"
+                android:title="@string/main_activity_menu_friends" />
+            <item
+                android:id="@+id/wishlist"
+                android:icon="@drawable/ic_menu_wishlist"
+                android:title="@string/main_activity_menu_wishlist" />
+            <item
+                android:id="@+id/achievements"
+                android:icon="@drawable/ic_menu_achievements"
+                android:title="@string/main_activity_menu_achievements" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_menu_logout"
+                android:title="@string/main_activity_menu_logout" />
+        </menu>
+    </item>
+
+</menu>

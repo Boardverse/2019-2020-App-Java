@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.minGameCarousel.MinGameCarouselFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/min_game_carousel_fragment_title_all_games"
+            android:layout_weight="0"
+            android:id="@+id/carousel_title"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/min_game_carousel_view_all"
+            android:src="@drawable/min_game_carousel_arrow"
+            android:layout_weight="0"
+            android:id="@+id/carousel_view_all_button"/>
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:showDividers="middle"
+            android:divider="@drawable/horizontal_divider"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:id="@+id/carousel_list_elements">
+
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/min_game_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minGame.MinGameFragment"
+                android:id="@+id/min_game_fragment_game_example_0" />
+
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/min_game_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minGame.MinGameFragment"
+                android:id="@+id/min_game_fragment_game_example_1" />
+
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/min_game_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minGame.MinGameFragment"
+                android:id="@+id/min_game_fragment_game_example_2" />
+
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/min_game_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minGame.MinGameFragment"
+                android:id="@+id/min_game_fragment_game_example_3" />
+
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/min_game_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minGame.MinGameFragment"
+                android:id="@+id/min_game_fragment_game_example_4" />
+
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/min_game_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minGame.MinGameFragment"
+                android:id="@+id/min_game_fragment_game_example_5" />
+
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/min_game_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minGame.MinGameFragment"
+                android:id="@+id/min_game_fragment_game_example_6" />
+
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/min_game_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minGame.MinGameFragment"
+                android:id="@+id/min_game_fragment_game_example_7" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</LinearLayout>

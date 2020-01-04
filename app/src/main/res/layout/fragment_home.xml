@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:showDividers="middle"
+        android:divider="@drawable/vertical_divider">
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/min_game_carousel_fragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:id="@+id/home_activity_game_popular" />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/min_game_carousel_fragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:id="@+id/home_activity_game_new" />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/min_game_carousel_fragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:id="@+id/home_activity_game_your_friend_also_play" />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/min_game_carousel_fragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:id="@+id/game_activity_games_friends_love" />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/min_game_carousel_fragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:id="@+id/home_activity_game_random_theme" />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/min_game_carousel_fragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:id="@+id/home_activity_game_random_type" />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/min_game_carousel_fragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:id="@+id/home_activity_game_famous_publisher" />
+
+    </LinearLayout>
+
+</ScrollView>
