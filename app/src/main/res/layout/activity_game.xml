@@ -410,42 +410,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
             android:id="@+id/game_activity_games_same_type" />
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
             android:id="@+id/game_activity_games_same_theme" />
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
             android:id="@+id/game_activity_games_same_publisher" />
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
             android:id="@+id/game_activity_games_friends_owning" />
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
             android:id="@+id/game_activity_games_friends_loving" />
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
             android:id="@+id/game_activity_games_others_owning_playing" />
 
         <Space

@@ -117,28 +117,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
             android:id="@+id/user_activity_games_played" />
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
             android:id="@+id/user_activity_games_reviewed" />
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
             android:id="@+id/user_activity_games_wishlisted" />
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarousel.MinGameCarouselFragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
             android:id="@+id/user_activity_achievements" />
 
         <Space
