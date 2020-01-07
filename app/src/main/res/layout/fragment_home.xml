@@ -64,6 +64,10 @@
             android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
             android:id="@+id/home_activity_game_famous_publisher" />
 
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
     </LinearLayout>
 
 </ScrollView>

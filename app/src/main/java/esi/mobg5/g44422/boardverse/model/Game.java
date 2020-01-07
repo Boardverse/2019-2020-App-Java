@@ -1,5 +1,7 @@
 package esi.mobg5.g44422.boardverse.model;
 
+import androidx.annotation.Nullable;
+
 import java.util.List;
 
 public class Game extends MinGame {
@@ -23,42 +25,52 @@ public class Game extends MinGame {
     private List<GameLanguage> game_languages;
     private List<GameAward> game_awards;
 
+    @Nullable
     public Integer get_game_publishing_date() {
         return game_publishing_date;
     }
 
+    @Nullable
     public Integer get_game_min_player() {
         return game_min_player;
     }
 
+    @Nullable
     public Integer get_game_recommended_player() {
         return game_recommended_player;
     }
 
+    @Nullable
     public Integer get_game_max_player() {
         return game_max_player;
     }
 
+    @Nullable
     public Integer get_game_min_duration() {
         return game_min_duration;
     }
 
+    @Nullable
     public Integer get_game_average_duration() {
         return game_average_duration;
     }
 
+    @Nullable
     public Integer get_game_max_duration() {
         return game_max_duration;
     }
 
+    @Nullable
     public Integer get_game_min_age() {
         return game_min_age;
     }
 
+    @Nullable
     public Integer get_game_recommended_age() {
         return game_recommended_age;
     }
 
+    @Nullable
     public Integer get_game_max_age() {
         return game_max_age;
     }
@@ -71,6 +83,7 @@ public class Game extends MinGame {
         return game_themes;
     }
 
+    @Nullable
     public String get_game_description() {
         return game_description;
     }

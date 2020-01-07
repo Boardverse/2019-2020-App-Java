@@ -3,14 +3,21 @@ package esi.mobg5.g44422.boardverse.ui.homeActivity.homeFragment;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import esi.mobg5.g44422.boardverse.domain.repository.Repository;
+import esi.mobg5.g44422.boardverse.model.GamePublisher;
+import esi.mobg5.g44422.boardverse.model.GameTheme;
+import esi.mobg5.g44422.boardverse.model.GameType;
 import esi.mobg5.g44422.boardverse.model.MinGame;
+import esi.mobg5.g44422.boardverse.model.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class HomeFragmentViewModel extends ViewModel {
-
-    private Repository repository;
 
     private MutableLiveData<List<MinGame>> popularGames;
 
@@ -22,20 +29,32 @@ public class HomeFragmentViewModel extends ViewModel {
 
     private MutableLiveData<List<MinGame>> gamesRandomTheme;
 
+    private MutableLiveData<GameTheme> gameTheme;
+
     private MutableLiveData<List<MinGame>> gamesRandomType;
+
+    private MutableLiveData<GameType> gameType;
 
     private MutableLiveData<List<MinGame>> gamesRandomPublisher;
 
+    private MutableLiveData<GamePublisher> gamePublisher;
+
 
     public HomeFragmentViewModel() {
-        repository = new Repository();
+        popularGames = new MutableLiveData<>();
+        newGames = new MutableLiveData<>();
+        gamesPlayedByFriends = new MutableLiveData<>();
+        gamesLovedByFriends = new MutableLiveData<>();
+        gamesRandomTheme = new MutableLiveData<>();
+        gameTheme = new MutableLiveData<>();
+        gamesRandomType = new MutableLiveData<>();
+        gameType = new MutableLiveData<>();
+        gamesRandomPublisher = new MutableLiveData<>();
+        gamePublisher = new MutableLiveData<>();
+        init();
     }
 
     public MutableLiveData<List<MinGame>> getPopularGames() {
-        if(popularGames == null) {
-            popularGames = new MutableLiveData<>();
-            // TODO
-        }
         return popularGames;
     }
 
@@ -44,10 +63,6 @@ public class HomeFragmentViewModel extends ViewModel {
     }
 
     public MutableLiveData<List<MinGame>> getNewGames() {
-        if(newGames == null) {
-            newGames = new MutableLiveData<>();
-            // TODO
-        }
         return newGames;
     }
 
@@ -56,10 +71,6 @@ public class HomeFragmentViewModel extends ViewModel {
     }
 
     public MutableLiveData<List<MinGame>> getGamesPlayedByFriends() {
-        if(gamesPlayedByFriends == null) {
-            gamesPlayedByFriends = new MutableLiveData<>();
-            // TODO
-        }
         return gamesPlayedByFriends;
     }
 
@@ -68,10 +79,6 @@ public class HomeFragmentViewModel extends ViewModel {
     }
 
     public MutableLiveData<List<MinGame>> getGamesLovedByFriends() {
-        if(gamesLovedByFriends == null) {
-            gamesLovedByFriends = new MutableLiveData<>();
-            // TODO
-        }
         return gamesLovedByFriends;
     }
 
@@ -80,10 +87,6 @@ public class HomeFragmentViewModel extends ViewModel {
     }
 
     public MutableLiveData<List<MinGame>> getGamesRandomTheme() {
-        if(gamesRandomTheme == null) {
-            gamesRandomTheme = new MutableLiveData<>();
-            // TODO
-        }
         return gamesRandomTheme;
     }
 
@@ -91,11 +94,15 @@ public class HomeFragmentViewModel extends ViewModel {
         this.gamesRandomTheme.setValue(gamesRandomTheme);
     }
 
-    public MutableLiveData<List<MinGame>> getGamesRandomTypes() {
-        if(gamesRandomType == null) {
-            gamesRandomType = new MutableLiveData<>();
-            // TODO
-        }
+    public MutableLiveData<GameTheme> getGameTheme() {
+        return gameTheme;
+    }
+
+    public void setGameTheme(GameTheme gameTheme) {
+        this.gameTheme.setValue(gameTheme);
+    }
+
+    public MutableLiveData<List<MinGame>> getGamesRandomType() {
         return gamesRandomType;
     }
 
@@ -103,16 +110,48 @@ public class HomeFragmentViewModel extends ViewModel {
         this.gamesRandomTheme.setValue(gamesRandomType);
     }
 
+    public MutableLiveData<GameType> getGameType() {
+        return gameType;
+    }
+
+    public void setGameType(GameType gameType) {
+        this.gameType.setValue(gameType);
+    }
+
     public MutableLiveData<List<MinGame>> getGamesRandomPublisher() {
-        if(gamesRandomPublisher == null) {
-            gamesRandomPublisher = new MutableLiveData<>();
-            // TODO
-        }
         return gamesRandomPublisher;
     }
 
     public void setGamesRandomPublisher(List<MinGame> gamesRandomPublisher) {
         this.gamesRandomTheme.setValue(gamesRandomPublisher);
+    }
+
+    public MutableLiveData<GamePublisher> getGamePublisher() {
+        return gamePublisher;
+    }
+
+    public void setGamePublisher(GamePublisher gamePublisher) {
+        this.gamePublisher.setValue(gamePublisher);
+    }
+
+    private void init() {
+        Repository.boardverseAPI.popularGames().enqueue(new Callback<Response<List<MinGame>>>() {
+            @Override
+            public void onResponse(@NotNull Call<Response<List<MinGame>>> call, @NotNull retrofit2.Response<Response<List<MinGame>>> response) {
+                if (!response.isSuccessful()) {
+                    return;
+                }
+                if (response.body().getErrors() != null || response.body().getData() == null) {
+                    return;
+                }
+                popularGames.setValue(response.body().getData());
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<Response<List<MinGame>>> call, @NotNull Throwable t) {
+                popularGames.setValue(new ArrayList<>());
+            }
+        });
     }
 
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.minUserCarouselFragment.minUserFragment.MinUserFragment"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/image_placeholder"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/user_activity_user_icon_description"
+        android:id="@+id/min_user_fragment_user_icon"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_activity_user_name"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:id="@+id/min_user_fragment_user_name"/>
+
+</LinearLayout>

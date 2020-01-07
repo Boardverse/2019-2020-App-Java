@@ -156,7 +156,7 @@
                         android:text="@string/game_activity_game_minimum_age"
                         android:maxLines="1"
                         android:ellipsize="end"
-                        android:id="@+id/game_activity_game_minimum_age"/>
+                        android:id="@+id/game_activity_game_players_age"/>
 
                 </LinearLayout>
 
@@ -316,12 +316,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/game_theme_fragment"
+                    android:name="esi.mobg5.g44422.boardverse.ui.gameActivity.gameThemeFragment.GameThemeFragment"
                     android:id="@+id/TODO" />
 
                 <fragment
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/game_theme_fragment"
+                    android:name="esi.mobg5.g44422.boardverse.ui.gameActivity.gameThemeFragment.GameThemeFragment"
                     android:id="@+id/TODO2" />
 
             </LinearLayout>
@@ -344,12 +346,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/game_type_fragment"
+                    android:name="esi.mobg5.g44422.boardverse.ui.gameActivity.gameTypeFragment.GameTypeFragment"
                     android:id="@+id/TODO3" />
 
                 <fragment
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/game_type_fragment"
+                    android:name="esi.mobg5.g44422.boardverse.ui.gameActivity.gameTypeFragment.GameTypeFragment"
                     android:id="@+id/TODO4" />
 
             </LinearLayout>

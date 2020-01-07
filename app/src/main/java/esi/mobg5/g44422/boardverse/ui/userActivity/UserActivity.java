@@ -1,8 +1,8 @@
 package esi.mobg5.g44422.boardverse.ui.userActivity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import esi.mobg5.g44422.boardverse.R;
 

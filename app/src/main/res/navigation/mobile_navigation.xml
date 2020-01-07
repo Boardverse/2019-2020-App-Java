@@ -9,42 +9,42 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="esi.mobg5.g44422.boardverse.ui.homeActivity.homeFragment.HomeFragment"
-        android:label="@string/main_activity_menu_home"
+        android:label="@string/navigation_drawer_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_scan"
         android:name="esi.mobg5.g44422.boardverse.ui.homeActivity.scanFragment.ScanFragment"
-        android:label="@string/main_activity_menu_scan"
+        android:label="@string/navigation_drawer_scan"
         tools:layout="@layout/fragment_scan" />
 
     <fragment
         android:id="@+id/nav_news"
         android:name="esi.mobg5.g44422.boardverse.ui.homeActivity.newsFragment.NewsFragment"
-        android:label="@string/main_activity_menu_news"
+        android:label="@string/navigation_drawer_news"
         tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/nav_friends"
         android:name="esi.mobg5.g44422.boardverse.ui.homeActivity.friendsFragment.FriendsFragment"
-        android:label="@string/main_activity_menu_friends"
+        android:label="@string/navigation_drawer_friends"
         tools:layout="@layout/fragment_friends" />
 
     <fragment
         android:id="@+id/nav_wishlist"
         android:name="esi.mobg5.g44422.boardverse.ui.homeActivity.wishlistFragment.WishlistFragment"
-        android:label="@string/main_activity_menu_wishlist"
+        android:label="@string/navigation_drawer_wishlist"
         tools:layout="@layout/fragment_wishlist" />
 
     <fragment
         android:id="@+id/nav_achievements"
         android:name="esi.mobg5.g44422.boardverse.ui.homeActivity.achievementsFragment.AchievementsFragment"
-        android:label="@string/main_activity_menu_achievements"
+        android:label="@string/navigation_drawer_achievements"
         tools:layout="@layout/fragment_achievements" />
 
     <fragment
         android:id="@+id/nav_logout"
         android:name="esi.mobg5.g44422.boardverse.ui.homeActivity.logoutFragment.LogoutFragment"
-        android:label="@string/main_activity_menu_logout"
+        android:label="@string/navigation_drawer_logout"
         tools:layout="@layout/fragment_logout" />
 </navigation>

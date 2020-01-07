@@ -2,10 +2,10 @@ package esi.mobg5.g44422.boardverse.model;
 
 public class GameLanguage {
 
-    private Integer language_id;
+    private String language_id;
     private String language_name;
 
-    public Integer get_language_id() {
+    public String get_language_id() {
         return language_id;
     }
 

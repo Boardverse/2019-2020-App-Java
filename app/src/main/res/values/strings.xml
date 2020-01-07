@@ -30,20 +30,27 @@
     <string name="game_activity_button_remove_from_wishlist">Remove from wishlist</string>
     <string name="game_activity_game_rating_star">Game Rating Star</string>
 
-    <!-- Home Activity Menu -->
-    <string name="main_activity_menu_general">General</string>
-    <string name="main_activity_menu_home">Home</string>
-    <string name="main_activity_menu_scan">Scan Game</string>
-    <string name="main_activity_menu_news">News</string>
-    <string name="main_activity_menu_user">User</string>
-    <string name="main_activity_menu_friends">Friends</string>
-    <string name="main_activity_menu_wishlist">Wishlist</string>
-    <string name="main_activity_menu_achievements">Achievements</string>
-    <string name="main_activity_menu_logout">Logout</string>
+    <!-- HomeActivity -->
+    <string name="home_activity_game_popular">Popular Games</string>
+    <string name="home_activity_game_new">New Games</string>
+    <string name="home_activity_game_your_friend_also_play">Games your friends also play</string>
+    <string name="game_activity_games_friends_love">Games your friends love</string>
+    <string name="home_activity_game_random_theme">Random %s games</string>
+    <string name="home_activity_game_random_type">Random %s games</string>
+    <string name="home_activity_game_famous_publisher">Random games from %s</string>
 
-    <string name="title_activity_home">HomeActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- Navigation Drawer -->
+    <string name="navigation_drawer_general">General</string>
+    <string name="navigation_drawer_home">Home</string>
+    <string name="navigation_drawer_scan">Scan Game</string>
+    <string name="navigation_drawer_news">News</string>
+    <string name="navigation_drawer_user">User</string>
+    <string name="navigation_drawer_friends">Friends</string>
+    <string name="navigation_drawer_wishlist">Wishlist</string>
+    <string name="navigation_drawer_achievements">Achievements</string>
+    <string name="navigation_drawer_logout">Logout</string>
+
+    <string name="navigation_drawer_user_icon">User Icon</string>
     <string name="navigation_drawer_username">Username</string>
     <string name="navigation_drawer_email">android.studio@android.com</string>
 
@@ -67,9 +74,11 @@
 
     <!-- Min Game Carousel -->
     <string name="min_game_carousel_fragment_title_all_games">All Games</string>
-    <string name="min_game_carousel_view_all">View all</string>
+    <string name="min_game_carousel_fragment_view_all">View all</string>
     <string name="game_theme_fragment_theme_name">Theme Name</string>
     <string name="game_type_fragment_type_name">Type Name</string>
-    <string name="navigation_drawer_user_icon">User Icon</string>
+    <string name="user_activity_user_name">User</string>
+    <string name="min_user_carousel_fragment_title_all_users">All Users</string>
+    <string name="min_user_carousel_fragment_view_all">View all users</string>
 
 </resources>

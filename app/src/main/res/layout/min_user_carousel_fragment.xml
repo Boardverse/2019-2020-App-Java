@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.minGameCarouselFragment.MinGameCarouselFragment"
+    tools:context=".ui.minUserCarouselFragment.MinUserCarouselFragment"
     android:orientation="vertical">
 
     <LinearLayout
@@ -16,9 +16,9 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="@string/min_game_carousel_fragment_title_all_games"
+            android:text="@string/min_user_carousel_fragment_title_all_users"
             android:layout_weight="0"
-            android:id="@+id/min_game_carousel_title"/>
+            android:id="@+id/min_user_carousel_title"/>
 
         <Space
             android:layout_width="wrap_content"
@@ -29,10 +29,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@null"
-            android:contentDescription="@string/min_game_carousel_fragment_view_all"
+            android:contentDescription="@string/min_user_carousel_fragment_view_all"
             android:src="@drawable/carousel_arrow"
             android:layout_weight="0"
-            android:id="@+id/min_game_carousel_view_all_button"/>
+            android:id="@+id/min_user_carousel_view_all_button"/>
 
     </LinearLayout>
 
@@ -47,63 +47,63 @@
             android:divider="@drawable/horizontal_divider"
             android:layout_margin="10dp"
             android:orientation="horizontal"
-            android:id="@+id/min_game_carousel_list_elements">
+            android:id="@+id/min_user_carousel_list_elements">
 
             <fragment
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/min_game_fragment"
-                android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.minGameFragment.MinGameFragment"
-                android:id="@+id/min_game_fragment_game_example_0" />
+                tools:layout="@layout/min_user_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.minUserFragment.MinUserFragment"
+                android:id="@+id/min_user_fragment_user_example_0" />
 
             <fragment
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/min_game_fragment"
-                android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.minGameFragment.MinGameFragment"
-                android:id="@+id/min_game_fragment_game_example_1" />
+                tools:layout="@layout/min_user_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.minUserFragment.MinUserFragment"
+                android:id="@+id/min_user_fragment_user_example_1" />
 
             <fragment
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/min_game_fragment"
-                android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.minGameFragment.MinGameFragment"
-                android:id="@+id/min_game_fragment_game_example_2" />
+                tools:layout="@layout/min_user_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.minUserFragment.MinUserFragment"
+                android:id="@+id/min_user_fragment_user_example_2" />
 
             <fragment
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/min_game_fragment"
-                android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.minGameFragment.MinGameFragment"
-                android:id="@+id/min_game_fragment_game_example_3" />
+                tools:layout="@layout/min_user_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.minUserFragment.MinUserFragment"
+                android:id="@+id/min_user_fragment_user_example_3" />
 
             <fragment
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/min_game_fragment"
-                android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.minGameFragment.MinGameFragment"
-                android:id="@+id/min_game_fragment_game_example_4" />
+                tools:layout="@layout/min_user_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.minUserFragment.MinUserFragment"
+                android:id="@+id/min_user_fragment_user_example_4" />
 
             <fragment
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/min_game_fragment"
-                android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.minGameFragment.MinGameFragment"
-                android:id="@+id/min_game_fragment_game_example_5" />
+                tools:layout="@layout/min_user_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.minUserFragment.MinUserFragment"
+                android:id="@+id/min_user_fragment_user_example_5" />
 
             <fragment
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/min_game_fragment"
-                android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.minGameFragment.MinGameFragment"
-                android:id="@+id/min_game_fragment_game_example_6" />
+                tools:layout="@layout/min_user_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.minUserFragment.MinUserFragment"
+                android:id="@+id/min_user_fragment_user_example_6" />
 
             <fragment
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/min_game_fragment"
-                android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.minGameFragment.MinGameFragment"
-                android:id="@+id/min_game_fragment_game_example_7" />
+                tools:layout="@layout/min_user_fragment"
+                android:name="esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.minUserFragment.MinUserFragment"
+                android:id="@+id/min_user_fragment_user_example_7" />
 
         </LinearLayout>
 

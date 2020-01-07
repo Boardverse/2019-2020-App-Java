@@ -1,23 +1,18 @@
 package esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import org.jetbrains.annotations.NotNull;
-
 import esi.mobg5.g44422.boardverse.R;
-import esi.mobg5.g44422.boardverse.model.MinGame;
-import esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.minGameFragment.MinGameFragment;
 
 public class MinGameCarouselFragment extends Fragment {
 
@@ -33,35 +28,54 @@ public class MinGameCarouselFragment extends Fragment {
         return new MinGameCarouselFragment();
     }
 
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.min_game_carousel_fragment, container, false);
-        this.title = root.findViewById(R.id.carousel_title);
-        return root;
+    public MinGameCarouselFragmentViewModel getMinGameCarouselFragmentViewModel() {
+        return minGameCarouselFragmentViewModel;
     }
 
     @Override
-    public void onViewCreated(@NotNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         minGameCarouselFragmentViewModel = ViewModelProviders.of(this).get(MinGameCarouselFragmentViewModel.class);
-
-        minGameCarouselFragmentViewModel.getTitle().observe(this, s -> {
-            this.title.setText(s);
-        });
-
-        minGameCarouselFragmentViewModel.getMinGames().observe(this, minGames -> {
-            this.listElements.removeAllViews();
-            for (MinGame minGame : minGames) {
-                this.listElements.addView(MinGameFragment.newInstance().getView());
-            }
-        });
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        title = view.findViewById(R.id.min_game_carousel_title);
+        minGameCarouselFragmentViewModel.getTitle().observe(this, s -> title.setText(s));
+
+        viewAllButton = view.findViewById(R.id.min_game_carousel_view_all_button);
+        viewAllButton.setOnClickListener(v -> {
+            CharSequence text = "View More";
+            Toast toast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
+            toast.show();
+        });
+
+        listElements = view.findViewById(R.id.min_game_carousel_list_elements);
+        minGameCarouselFragmentViewModel.getMinGames().observe(this, minGames -> {
+            /*
+            for (Fragment fragment : getFragmentManager().getFragments()) {
+                getFragmentManager().beginTransaction().remove(fragment).commit();
+            }
+            listElements.removeAllViews();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            // TODO
+
+            for (MinGame minGame : minGames) {
+                MinGameFragment mg = MinGameFragment.newInstance();
+                getFragmentManager().beginTransaction().add(R.id.min_game_carousel_list_elements, mg).commit();
+                try {
+                    mg.getMinGameFragmentViewModel().setMinGame(minGame);
+                } catch (Exception e) {
+                    Toast.makeText(this.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+            */
+        });
+    }
 }
