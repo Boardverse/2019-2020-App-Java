@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="40dp"
@@ -20,17 +20,21 @@
             tools:ignore="UseCompoundDrawables,UselessParent">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/image_placeholder"
-                android:contentDescription="@string/user_activity_user_icon_description" />
+                android:layout_gravity="center"
+                android:contentDescription="@string/user_activity_user_icon_description"
+                android:scaleType="centerCrop"
+                android:id="@+id/user_activity_user_icon"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/user_activity_username"
                 android:textStyle="bold"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:id="@+id/user_activity_user_name"/>
 
         </LinearLayout>
 
@@ -58,7 +62,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:text="@string/user_activity_games_owned"/>
+                    android:text="@string/user_activity_games_owned"
+                    android:id="@+id/user_activity_user_games_owned_count"/>
 
             </LinearLayout>
 
@@ -80,7 +85,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:text="@string/user_activity_games_reviewed"/>
+                    android:text="@string/user_activity_games_reviewed"
+                    android:id="@+id/user_activity_user_games_reviewed_count"/>
 
             </LinearLayout>
 
@@ -95,14 +101,15 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:text="@string/user_activity_game_wishlisted_count"/>
+                    android:text="@string/user_activity_games_wishlisted_count"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:text="@string/user_activity_games_wishlisted"/>
+                    android:text="@string/user_activity_games_wishlisted"
+                    android:id="@+id/user_activity_user_games_wishlisted_count"/>
 
             </LinearLayout>
 
@@ -111,35 +118,36 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/user_activity_button_add_friend"/>
+            android:text="@string/user_activity_button_add_friend"
+            android:id="@+id/user_activity_user_add_friend_button"/>
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
             android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
-            android:id="@+id/user_activity_games_played" />
+            android:id="@+id/user_activity_user_games_played"/>
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
             android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
-            android:id="@+id/user_activity_games_reviewed" />
+            android:id="@+id/user_activity_user_games_reviewed" />
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/min_game_carousel_fragment"
             android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
-            android:id="@+id/user_activity_games_wishlisted" />
+            android:id="@+id/user_activity_user_games_wishlisted" />
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
-            android:id="@+id/user_activity_achievements" />
+            tools:layout="@layout/min_user_carousel_fragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.MinUserCarouselFragment"
+            android:id="@+id/user_activity_user_friends" />
 
         <Space
             android:layout_width="match_parent"
