@@ -20,13 +20,16 @@ import com.bumptech.glide.Glide;
 
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Locale;
 
 import esi.mobg5.g44422.boardverse.R;
 import esi.mobg5.g44422.boardverse.domain.repository.Repository;
 import esi.mobg5.g44422.boardverse.model.Game;
+import esi.mobg5.g44422.boardverse.model.MinGame;
 import esi.mobg5.g44422.boardverse.model.Response;
 import esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment;
+import esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.MinUserCarouselFragment;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -72,9 +75,9 @@ public class GameActivity extends AppCompatActivity {
 
     private MinGameCarouselFragment game_activity_games_same_publisher;
 
-    private MinGameCarouselFragment game_activity_games_friends_owning;
+    private MinUserCarouselFragment game_activity_games_friends_owning;
 
-    private MinGameCarouselFragment game_activity_games_friends_loving;
+    private MinUserCarouselFragment game_activity_games_friends_loving;
 
     private MinGameCarouselFragment game_activity_games_others_owning_playing;
 
@@ -104,17 +107,21 @@ public class GameActivity extends AppCompatActivity {
         game_activity_games_same_type = (MinGameCarouselFragment) getSupportFragmentManager().findFragmentById(R.id.game_activity_games_same_type);
         game_activity_games_same_theme = (MinGameCarouselFragment) getSupportFragmentManager().findFragmentById(R.id.game_activity_games_same_theme);
         game_activity_games_same_publisher = (MinGameCarouselFragment) getSupportFragmentManager().findFragmentById(R.id.game_activity_games_same_publisher);
-        game_activity_games_friends_owning = (MinGameCarouselFragment) getSupportFragmentManager().findFragmentById(R.id.game_activity_games_friends_owning);
-        game_activity_games_friends_loving = (MinGameCarouselFragment) getSupportFragmentManager().findFragmentById(R.id.game_activity_games_friends_loving);
+        game_activity_games_friends_owning = (MinUserCarouselFragment) getSupportFragmentManager().findFragmentById(R.id.game_activity_games_friends_owning);
+        game_activity_games_friends_loving = (MinUserCarouselFragment) getSupportFragmentManager().findFragmentById(R.id.game_activity_games_friends_loving);
         game_activity_games_others_owning_playing = (MinGameCarouselFragment) getSupportFragmentManager().findFragmentById(R.id.game_activity_games_others_owning_playing);
 
 
         gameActivityViewModel.getFriendsLikingGame().observe(this, users -> {
-
+            game_activity_games_friends_loving.getMinUserCarouselFragmentViewModel().setMinUsers(users);
         });
+        game_activity_games_friends_loving.getMinUserCarouselFragmentViewModel().setTitle(getResources().getString(R.string.game_activity_games_friends_liking));
+
         gameActivityViewModel.getFriendsOwningGame().observe(this, users -> {
-
+            game_activity_games_friends_owning.getMinUserCarouselFragmentViewModel().setMinUsers(users);
         });
+        game_activity_games_friends_owning.getMinUserCarouselFragmentViewModel().setTitle(getResources().getString(R.string.game_activity_games_friends_owning));
+
         gameActivityViewModel.getGame().observe(this, game -> {
             if(game.get_game_thumbnail_url() != null) {
                 Glide
@@ -170,35 +177,26 @@ public class GameActivity extends AppCompatActivity {
 
         });
         gameActivityViewModel.getGamesSameTheme().observe(this, minGames -> {
-            try {
-                game_activity_games_same_theme.getMinGameCarouselFragmentViewModel().setMinGames(minGames);
-            } catch (Exception e) {
-                Toast.makeText(getApplication().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-            }
+            game_activity_games_same_theme.getMinGameCarouselFragmentViewModel().setMinGames(minGames);
         });
-        gameActivityViewModel.getGamesFromSameEditor().observe(this, minGames -> {
-           try {
-               game_activity_games_same_publisher.getMinGameCarouselFragmentViewModel().setMinGames(minGames);
-           } catch (Exception e) {
-               Toast.makeText(getApplication().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-           }
-        });
-        gameActivityViewModel.getGamesSameType().observe(this, minGames -> {
-            try {
-                game_activity_games_same_type.getMinGameCarouselFragmentViewModel().setMinGames(minGames);
-            } catch (Exception e) {
-                Toast.makeText(getApplication().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
-        gameActivityViewModel.getGamesOwedByOtherOwners().observe(this, minGames -> {
-            try {
-                game_activity_games_others_owning_playing.getMinGameCarouselFragmentViewModel().setMinGames(minGames);
-            } catch (Exception e) {
-                Toast.makeText(getApplication().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
+        game_activity_games_same_theme.getMinGameCarouselFragmentViewModel().setTitle(getResources().getString(R.string.game_activity_games_same_theme));
 
-        Repository.boardverseAPI.game("1").enqueue(new Callback<Response<Game>>() {
+        gameActivityViewModel.getGamesFromSamePublisher().observe(this, minGames -> {
+            game_activity_games_same_publisher.getMinGameCarouselFragmentViewModel().setMinGames(minGames);
+        });
+        game_activity_games_same_publisher.getMinGameCarouselFragmentViewModel().setTitle(getResources().getString(R.string.game_activity_games_same_publisher));
+
+        gameActivityViewModel.getGamesSameType().observe(this, minGames -> {
+            game_activity_games_same_type.getMinGameCarouselFragmentViewModel().setMinGames(minGames);
+        });
+        game_activity_games_same_type.getMinGameCarouselFragmentViewModel().setTitle(getResources().getString(R.string.game_activity_games_same_type));
+
+        gameActivityViewModel.getGamesOwedByOtherOwners().observe(this, minGames -> {
+            game_activity_games_others_owning_playing.getMinGameCarouselFragmentViewModel().setMinGames(minGames);
+        });
+        game_activity_games_others_owning_playing.getMinGameCarouselFragmentViewModel().setTitle(getResources().getString(R.string.game_activity_games_owned_by_others));
+
+        Repository.boardverseAPI.game("1"/*gameActivityViewModel.getGame().getValue().get_game_id().toString()*/).enqueue(new Callback<Response<Game>>() {
             @Override
             public void onResponse(Call<Response<Game>> call, retrofit2.Response<Response<Game>> response) {
                 if (!response.isSuccessful()) {
@@ -217,12 +215,65 @@ public class GameActivity extends AppCompatActivity {
                 Toast.makeText(getApplication().getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-    }
 
-    @Nullable
-    @Override
-    public View onCreateView(@Nullable View parent, @NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
-        return super.onCreateView(parent, name, context, attrs);
-    }
+        Repository.boardverseAPI.sameType("1"/*gameActivityViewModel.getGame().getValue().get_game_id().toString()*/).enqueue(new Callback<Response<List<MinGame>>>() {
+            @Override
+            public void onResponse(Call<Response<List<MinGame>>> call, retrofit2.Response<Response<List<MinGame>>> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(getApplication().getApplicationContext(), "FAIL NETWORK LEVEL 1", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (response.body().getErrors() != null || response.body().getData() == null) {
+                    Toast.makeText(getApplication().getApplicationContext(), "FAIL DATA LEVEL", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                gameActivityViewModel.setGamesSameType(response.body().getData());
+            }
 
+            @Override
+            public void onFailure(Call<Response<List<MinGame>>> call, Throwable t) {
+                Toast.makeText(getApplication().getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Repository.boardverseAPI.sameTheme("1"/*gameActivityViewModel.getGame().getValue().get_game_id().toString()*/).enqueue(new Callback<Response<List<MinGame>>>() {
+            @Override
+            public void onResponse(Call<Response<List<MinGame>>> call, retrofit2.Response<Response<List<MinGame>>> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(getApplication().getApplicationContext(), "FAIL NETWORK LEVEL 1", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (response.body().getErrors() != null || response.body().getData() == null) {
+                    Toast.makeText(getApplication().getApplicationContext(), "FAIL DATA LEVEL", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                gameActivityViewModel.setGamesSameTheme(response.body().getData());
+            }
+
+            @Override
+            public void onFailure(Call<Response<List<MinGame>>> call, Throwable t) {
+                Toast.makeText(getApplication().getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Repository.boardverseAPI.samePublisher("1"/*gameActivityViewModel.getGame().getValue().get_game_id().toString()*/).enqueue(new Callback<Response<List<MinGame>>>() {
+            @Override
+            public void onResponse(Call<Response<List<MinGame>>> call, retrofit2.Response<Response<List<MinGame>>> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(getApplication().getApplicationContext(), "FAIL NETWORK LEVEL 1", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (response.body().getErrors() != null || response.body().getData() == null) {
+                    Toast.makeText(getApplication().getApplicationContext(), "FAIL DATA LEVEL", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                gameActivityViewModel.setGamesFromSamePublisher(response.body().getData());
+            }
+
+            @Override
+            public void onFailure(Call<Response<List<MinGame>>> call, Throwable t) {
+                Toast.makeText(getApplication().getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
 }

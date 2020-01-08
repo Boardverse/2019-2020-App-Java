@@ -1,7 +1,9 @@
 package esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,6 +26,10 @@ public class MinUserCarouselFragment extends Fragment {
 
     private LinearLayout listElements;
 
+    public MinUserCarouselFragment() {
+
+    }
+
     public static MinUserCarouselFragment newInstance() {
         return new MinUserCarouselFragment();
     }
@@ -36,6 +42,11 @@ public class MinUserCarouselFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         minUserCarouselFragmentViewModel = ViewModelProviders.of(this).get(MinUserCarouselFragmentViewModel.class);
+    }
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.min_user_carousel_fragment, container, false);
     }
 
     @Override

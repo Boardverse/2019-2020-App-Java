@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="30dp"
@@ -248,7 +248,7 @@
 
                 <RatingBar
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:stepSize="1"
                     android:numStars="5"
                     android:rating = "3"
@@ -368,13 +368,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:showDividers="middle"
+                android:divider="@drawable/horizontal_divider"
                 android:id="@+id/game_activity_game_pictures_container">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
                     android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
+                    android:scaleType="center"
                     android:src="@drawable/image_placeholder"
                     android:padding="10dp"
                     android:contentDescription="@string/game_activity_game_picture_description" />
@@ -383,7 +385,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
                     android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
+                    android:scaleType="center"
                     android:src="@drawable/image_placeholder"
                     android:padding="10dp"
                     android:contentDescription="@string/game_activity_game_picture_description" />
@@ -392,7 +394,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
                     android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
+                    android:scaleType="center"
                     android:src="@drawable/image_placeholder"
                     android:padding="10dp"
                     android:contentDescription="@string/game_activity_game_picture_description" />
@@ -401,7 +403,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
                     android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
+                    android:scaleType="center"
                     android:src="@drawable/image_placeholder"
                     android:padding="10dp"
                     android:contentDescription="@string/game_activity_game_picture_description" />
@@ -434,15 +436,15 @@
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
+            tools:layout="@layout/min_user_carousel_fragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.MinUserCarouselFragment"
             android:id="@+id/game_activity_games_friends_owning" />
 
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout="@layout/min_game_carousel_fragment"
-            android:name="esi.mobg5.g44422.boardverse.ui.minGameCarouselFragment.MinGameCarouselFragment"
+            tools:layout="@layout/min_user_carousel_fragment"
+            android:name="esi.mobg5.g44422.boardverse.ui.minUserCarouselFragment.MinUserCarouselFragment"
             android:id="@+id/game_activity_games_friends_loving" />
 
         <fragment

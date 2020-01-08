@@ -12,7 +12,6 @@
     <string name="game_activity_game_description">Game Description</string>
 
     <string name="game_activity_game_picture_description">Game Picture</string>
-
     <string name="game_activity_game_players_count_icon_description">Game Players Count Icon</string>
     <string name="game_activity_game_players_count">Players Count</string>
     <string name="game_activity_game_minimum_age_icon_description">Game Minimum Age Icon</string>
@@ -21,6 +20,7 @@
     <string name="game_activity_game_duration">Game Duration</string>
     <string name="game_activity_game_publishing_date_icon_description">Game Publishing Date Icon</string>
     <string name="game_activity_game_publishing_date">Publishing Date</string>
+    <string name="game_activity_game_rating_star">Game Rating Star</string>
 
     <string name="game_activity_button_i_own_this_game">I own this game</string>
     <string name="game_activity_button_i_don_t_own_this_game">I don\'t own this game</string>
@@ -28,13 +28,12 @@
     <string name="game_activity_button_i_ve_never_played_this_game">I\'ve never played this game</string>
     <string name="game_activity_button_add_to_wishlist">Add to wishlist</string>
     <string name="game_activity_button_remove_from_wishlist">Remove from wishlist</string>
-    <string name="game_activity_game_rating_star">Game Rating Star</string>
 
     <!-- HomeActivity -->
     <string name="home_activity_game_popular">Popular Games</string>
     <string name="home_activity_game_new">New Games</string>
     <string name="home_activity_game_your_friend_also_play">Games your friends also play</string>
-    <string name="game_activity_games_friends_love">Games your friends love</string>
+    <string name="home_activity_game_your_friends_love">Games your friends love</string>
     <string name="home_activity_game_random_theme">Random %s games</string>
     <string name="home_activity_game_random_type">Random %s games</string>
     <string name="home_activity_game_famous_publisher">Random games from %s</string>
@@ -65,20 +64,33 @@
     <string name="user_activity_user_icon_description">User Icon</string>
     <string name="user_activity_username">Username</string>
     <string name="user_activity_button_add_friend">Add Friend</string>
-    <string name="user_activity_games_owned">Games\nOwned</string>
+    <string name="user_activity_games_owned">Games Owned</string>
     <string name="user_activity_games_owned_count">Games Owned Count</string>
-    <string name="user_activity_games_reviewed">Games\nReviewed</string>
+    <string name="user_activity_games_reviewed">Games Reviewed</string>
     <string name="user_activity_games_reviewed_count">Games reviewed Count</string>
-    <string name="user_activity_games_wishlisted">Games\nWishlisted</string>
-    <string name="user_activity_game_wishlisted_count">Game Wishlisted Count</string>
+    <string name="user_activity_games_wishlisted">Games Wishlisted</string>
+    <string name="user_activity_games_wishlisted_count">Game Wishlisted Count</string>
 
     <!-- Min Game Carousel -->
     <string name="min_game_carousel_fragment_title_all_games">All Games</string>
     <string name="min_game_carousel_fragment_view_all">View all</string>
-    <string name="game_theme_fragment_theme_name">Theme Name</string>
-    <string name="game_type_fragment_type_name">Type Name</string>
-    <string name="user_activity_user_name">User</string>
+
+    <!-- Min User Carousel -->
     <string name="min_user_carousel_fragment_title_all_users">All Users</string>
     <string name="min_user_carousel_fragment_view_all">View all users</string>
+
+    <!-- Game Theme Fragment -->
+    <string name="game_theme_fragment_theme_name">Theme Name</string>
+
+    <!-- Game Type Fragment -->
+    <string name="game_type_fragment_type_name">Type Name</string>
+    <string name="game_activity_games_friends_liking">Friends who like this game</string>
+    <string name="game_activity_games_friends_owning">Friends who own this game</string>
+    <string name="game_activity_games_same_theme">Games with thee same theme</string>
+    <string name="game_activity_games_same_publisher">Games from the same publisher</string>
+    <string name="game_activity_games_same_type">Games from the same type</string>
+    <string name="game_activity_games_owned_by_others">Owners of this game also own</string>
+    <string name="user_Activity_games_played">Games Played</string>
+    <string name="user_activity_friends">Friends</string>
 
 </resources>

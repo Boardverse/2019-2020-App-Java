@@ -8,6 +8,7 @@ import java.util.List;
 import esi.mobg5.g44422.boardverse.domain.repository.Repository;
 import esi.mobg5.g44422.boardverse.model.Game;
 import esi.mobg5.g44422.boardverse.model.MinGame;
+import esi.mobg5.g44422.boardverse.model.MinUser;
 import esi.mobg5.g44422.boardverse.model.User;
 
 
@@ -17,11 +18,11 @@ public class GameActivityViewModel extends ViewModel {
 
     private MutableLiveData<Game> game;
 
-    private MutableLiveData<List<User>> friendsOwningGame;
+    private MutableLiveData<List<MinUser>> friendsOwningGame;
 
-    private MutableLiveData<List<User>> friendsLikingGame;
+    private MutableLiveData<List<MinUser>> friendsLikingGame;
 
-    private MutableLiveData<List<MinGame>> gamesFromSameEditor;
+    private MutableLiveData<List<MinGame>> gamesFromSamePublisher;
 
     private MutableLiveData<List<MinGame>> gamesSameType;
 
@@ -34,8 +35,8 @@ public class GameActivityViewModel extends ViewModel {
         game = new MutableLiveData<>();
         friendsOwningGame = new MutableLiveData<>();
         friendsLikingGame = new MutableLiveData<>();
-        gamesFromSameEditor = new MutableLiveData<>();
-        gamesFromSameEditor = new MutableLiveData<>();
+        gamesFromSamePublisher = new MutableLiveData<>();
+        gamesFromSamePublisher = new MutableLiveData<>();
         gamesSameType = new MutableLiveData<>();
         gamesSameTheme = new MutableLiveData<>();
         gamesOwedByOtherOwners = new MutableLiveData<>();
@@ -49,28 +50,28 @@ public class GameActivityViewModel extends ViewModel {
         this.game.setValue(game);
     }
 
-    public MutableLiveData<List<User>> getFriendsOwningGame() {
+    public MutableLiveData<List<MinUser>> getFriendsOwningGame() {
         return friendsOwningGame;
     }
 
-    public void setFriendsOwningGame(List<User> users) {
+    public void setFriendsOwningGame(List<MinUser> users) {
         friendsOwningGame.setValue(users);
     }
 
-    public MutableLiveData<List<User>> getFriendsLikingGame() {
+    public MutableLiveData<List<MinUser>> getFriendsLikingGame() {
         return friendsLikingGame;
     }
 
-    public void setFriendsLikingGame(List<User> users) {
+    public void setFriendsLikingGame(List<MinUser> users) {
         friendsLikingGame.setValue(users);
     }
 
-    public MutableLiveData<List<MinGame>> getGamesFromSameEditor() {
-        return gamesFromSameEditor;
+    public MutableLiveData<List<MinGame>> getGamesFromSamePublisher() {
+        return gamesFromSamePublisher;
     }
 
-    public void setGamesFromSameEditor(List<MinGame> games) {
-        gamesFromSameEditor.setValue(games);
+    public void setGamesFromSamePublisher(List<MinGame> games) {
+        gamesFromSamePublisher.setValue(games);
     }
 
     public MutableLiveData<List<MinGame>> getGamesSameType() {
