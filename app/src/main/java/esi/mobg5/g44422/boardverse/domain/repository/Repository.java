@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Repository {
 
     private static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://boardverse.ascor.ml/api/")
+            .baseUrl("localhost:8000/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
